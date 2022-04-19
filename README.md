@@ -1,4 +1,4 @@
-# Translation with Caching
+## Translation with Caching
 
 
 ### Task
@@ -46,8 +46,8 @@ We have to pass two `Query Params` with
     - "fa" for Persian, etc.
     <br/>A list of all [ISO Language Codes](https://datahub.io/core/language-codes/r/0.html) is attached here.
 
-- A sample example is shown here when we hit the route on Postman.
-![](./_images/sample_example.png)
+-  we cab hit the route on Postman also.
+
 
 -Same thing can be done on any web browser by hitting the `GET` request.
 
