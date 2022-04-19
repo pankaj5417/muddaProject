@@ -23,7 +23,7 @@ To get the translation, we can Postman or any web browser and hit this API as fo
 ```
 {URL}/translate?sourceText=&targetLanguage=''
 
-# URL: (http://localhost:5000) or Deployed link
+# URL: (http://localhost:8000) 
 ```
 
 We have to pass two `Query Params` with 
