@@ -20,14 +20,13 @@ npm install
 
 ## Usage 
 To get the translation, we can Postman or any web browser and hit this API as follow for testing:
+
+# URL: (http://localhost:8000/speechtranslator) 
 ```
-{URL}/translate?sourceText=&targetLanguage=''
 
 # URL: (http://localhost:8000) 
-```
 
-We have to pass two `Query Params` with 
-```
+
  _____________________________________
 |_______KEY_______|_______VALUE_______|
 |                 |                   |
