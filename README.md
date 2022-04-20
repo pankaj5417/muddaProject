@@ -19,11 +19,14 @@ npm install
 
 ```
 ## To start
-
 ```
 npm run server
 
+```
+
+
 ## Usage 
+```
 To get the translation, we can Postman or any web browser and hit this API as follow for testing:
 
 ### URL: (http://localhost:8000/speechtranslator) 
