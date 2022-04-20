@@ -1,4 +1,4 @@
-# Translation with Caching
+## Translation with Caching
 
 
 ### Task
@@ -23,7 +23,7 @@ To get the translation, we can Postman or any web browser and hit this API as fo
 ```
 {URL}/translate?sourceText=&targetLanguage=''
 
-# URL: (http://localhost:5000) or Deployed link
+# URL: (http://localhost:8000) 
 ```
 
 We have to pass two `Query Params` with 
@@ -46,8 +46,8 @@ We have to pass two `Query Params` with
     - "fa" for Persian, etc.
     <br/>A list of all [ISO Language Codes](https://datahub.io/core/language-codes/r/0.html) is attached here.
 
-- A sample example is shown here when we hit the route on Postman.
-![](./_images/sample_example.png)
+-  we cab hit the route on Postman also.
+
 
 -Same thing can be done on any web browser by hitting the `GET` request.
 
