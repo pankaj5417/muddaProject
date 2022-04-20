@@ -3,7 +3,7 @@ const cache = require("../../cache");
 const translate = require("@vitalets/google-translate-api");
 const router = express.Router();
 
-router.get("/speechtranslator",  (req, res) => {
+router.get("/speechtranslator" ,cache(10),(req, res) => {
   return res.render("speechtranslator", {
     title: "Text Translator ",
     translated: "",
@@ -15,9 +15,11 @@ router.post("/speechtranslator", (req, res) => {
 
   translate(req.body.speech, { to: req.body.language })
     .then((response) => {
+      console.log(response.text)
       return res.render("speechtranslator", {
         title: "Text Translator",
         translated: response.text,
+        
       });
     })
     .catch((err) => {

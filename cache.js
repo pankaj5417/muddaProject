@@ -8,18 +8,16 @@ module.exports = duration => (req,res,next) => {
         return next();
     }
     //check if key exists in cache
-   // const key = req.originalUrl;
-   const key=req.body.speech
+    const key = req.originalUrl;
+   //const key=req.body.speech
    console.log(key)
     const cacheResponse = cache.get(key);
 
     //if exists, send cache result
     if(cacheResponse) {
-        console.log('Cache hit for '.brightGreen.bold + `${key}`.green.italic);
         res.send(cacheResponse);
     } else {
         //if not, replace ,send with method to  set response to cache
-        console.log('Cache miss for '.brightMagenta.bold + `${key}`.magenta.italic);
         res.originalSend = res.send;
         console.log(res.originalSend)
         res.send = body => {
