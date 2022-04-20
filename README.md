@@ -19,7 +19,7 @@ npm install
 ```
 
 ## Usage 
-To get the translation, we can Postman or any web browser and hit this API as follow:
+To get the translation, we can Postman or any web browser and hit this API as follow for testing:
 ```
 {URL}/translate?sourceText=&targetLanguage=''
 
