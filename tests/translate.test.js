@@ -2,23 +2,23 @@ const request = require("supertest");
 const express = require("express");
 const app = express();
 
-const translateRoutes = require('../src/controllers/translate.controller');
+const translateController = require('../src/controllers/translate.controller2');
 
 //body-parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //mount routers
-app.use("/", translateRoutes );
+app.use("/", translateController );
 
 
-describe("Test the /test1 path", () => {
+describe("Test GET/test1", () => {
     test("It should response the GET method", async () => {
         const response = await request(app).get('/test1');
         expect(response.statusCode).toBe(200);
     });
 });
 
-describe("Test /test2 path", () => {
+describe("Test GET/test2", () => {
     test("It should response the GET method", done => {
         request(app)
             .get("/test2")
