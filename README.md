@@ -27,38 +27,14 @@ npm run server
 
 ## Usage 
 ```
-To get the translation, we can Postman or any web browser and hit this API as follow for testing:
+For translation use the following url:
 
 ### URL: (http://localhost:8000/speechtranslator) 
 
 
 # URL: (http://localhost:8000) 
 
-
-
- _____________________________________
-|_______KEY_______|_______VALUE_______|
-|                 |                   |
-| sourceText      |        _          |
-|-----------------|-------------------|
-| targetLanguage  |        _          |
-|_________________|___________________|
 ```
-- `sourceText`: the text you want to translate
-- `targetLanguage`: the langauge to be it has to be translated
-<br>**NOTE:**
-  - for the `targetLangauge`, only **ISO Language code** should be passed as value.
-<br/>For example:
-    - "hi" for Hindi
-    - "ja" for Japanese
-    - "fa" for Persian, etc.
-    <br/>A list of all [ISO Language Codes](https://datahub.io/core/language-codes/r/0.html) is attached here.
-
--  we cab hit the route on Postman also.
-
-
--Same thing can be done on any web browser by hitting the `GET` request.
-
 ## Caching 
 In order to avoid repeated hits to the translation API, caching of translation is done.
 
