@@ -1,9 +1,44 @@
 const express = require("express");
-const cache = require("../../cache");
 const translate = require("@vitalets/google-translate-api");
+const NodeCache = require('node-cache')
+const myCache = new NodeCache()
+    
 const router = express.Router();
 
-router.get("/speechtranslator" ,cache(10),(req, res) => {
+let obj={key:"",value:""}
+router.get("/speechtranslator" ,(req, res) => {
+  console.log("get",obj.key);
+
+  if(myCache.has(obj.key)){
+    console.log('Retrieved value from cache !!')
+      
+    // Serve response from cache using
+    // myCache.get(key)
+    let val=  myCache.get(obj.key)
+    console.log("val",val)
+
+    return res.render("speechtranslator", {
+        title: "Text Translator ",
+        translated: val,
+      });
+    res.send("Result: " + myCache.get(req.body.speech))
+
+}else{
+
+    // Perform operation, since cache 
+    // doesn't have key
+    let result = obj.value
+    console.log("result",result)
+      
+    // Set value for same key, in order to 
+    // serve future requests efficiently
+    myCache.set(obj.key, result)
+      
+    console.log('Value not present in cache,'
+          + ' performing computation')
+   // res.send("Result: " + result)
+}
+
   return res.render("speechtranslator", {
     title: "Text Translator ",
     translated: "",
@@ -12,10 +47,12 @@ router.get("/speechtranslator" ,cache(10),(req, res) => {
 
 router.post("/speechtranslator", (req, res) => {
   console.log(req.body.speech);
+  obj.key=req.body.speech
 
   translate(req.body.speech, { to: req.body.language })
     .then((response) => {
       console.log(response.text)
+      obj.value=response.text
       return res.render("speechtranslator", {
         title: "Text Translator",
         translated: response.text,

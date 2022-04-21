@@ -3,7 +3,7 @@ const translate = require('@vitalets/google-translate-api');
 const ejs = require("ejs");
 
 const bodyParser = require("body-parser");
-const translateController=require("./controllers/translate.controller2")
+const translateController=require("./controllers/translate.controller")
 
 
 const app = express();
